@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "axios": "^1.8.1",
+    "elysia": "^1.2.24",
+    "form-data": "^4.0.2"
+  },
+  "name": "grok3-unofficial-api",
+  "module": "src/app.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
