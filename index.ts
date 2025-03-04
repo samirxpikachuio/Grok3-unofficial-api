@@ -4,8 +4,8 @@ import FormData from 'form-data';
 
 const GROK_API_URL = "https://grok.x.com/2/grok/add_response.json";
 const GROK_ATTACHMENT_URL = "https://x.com/i/api/2/grok/attachment.json";
-const AUTH_TOKEN = "2e0f4afb61dfd8d5725e778d48e2784ae9d2864f";
-const AUTH_BEARER = "AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA";
+const AUTH_TOKEN = "";
+const AUTH_BEARER = "";
 
 interface OpenAIMessage {
     role: 'user' | 'system' | 'assistant';
@@ -147,7 +147,7 @@ const app = new Elysia()
         set.status = 500;
         return {
             error: {
-                message: `Grok API request failed: ${(error as Error).message}`,
+                message: `Grok API request failed: ${error.message}`,
                 type: "api_error",
                 param: null,
                 code: null
@@ -155,6 +155,7 @@ const app = new Elysia()
         } as ErrorResponse;
     })
     .post('/api/grok3', async ({ body, headers, set }) => {
+
 
     
         if (!body || typeof body !== 'object' || !('messages' in body)) {
