@@ -7,7 +7,7 @@
   "name": "grok3-unofficial-api",
   "module": "src/app.ts",
   "type": "module",
-  "private": true,
+  "private": false,
   "devDependencies": {
     "@types/bun": "latest"
   },
